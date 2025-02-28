@@ -35,8 +35,8 @@ if uplaode_files:
             st.error(f"unsupported file type : {file_ext}")
             continue
 
-st.write("🔍 Preview the first few rows of the DataFrame")
-st.dataframe(df.head())
+        st.write("🔍 Preview the first few rows of the DataFrame")
+        st.dataframe(df.head())
 
 # data cleaning options
 st.subheader("🧹 Data Cleaning Tools & Options")
