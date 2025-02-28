@@ -79,7 +79,7 @@ if uplaode_files:
             buffer.seek(0)
 
             st.download_button(
-                label="⬇️ Downlaod " +file_name+ " as " +conversion_type,
+                label=f"⬇️ Downlaod {file_name} as {conversion_type}",
                 data=buffer,
                 file_name=file_name,
                 mime=mime_type
