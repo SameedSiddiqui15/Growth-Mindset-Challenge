@@ -59,9 +59,18 @@ if uplaode_files:
         df =df[columns]
 
         # data visualization
-        st.subheader("📊 Data Insights & Visualization")
-        if st.checkbox(f"📈 Display visualization for {file.name}"):
-            st.bar_chart(df.select_dtypes(include='number').iloc[:, :2])
+        # st.subheader("📊 Data Insights & Visualization")
+        # if st.checkbox(f"📈 Display visualization for {file.name}"):
+        #     st.bar_chart(df.select_dtypes(include='number').iloc[:, :2])
+        if not df.empty:
+        numeric_cols = df.select_dtypes(include=['number'])
+        if not numeric_cols.empty:
+            st.bar_chart(numeric_cols)
+        else:
+            st.error("No numeric columns available for visualization.")
+    else:
+        st.error("Uploaded dataset is empty.")
+
 
 
         # conversion options    
